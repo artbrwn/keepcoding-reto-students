@@ -42,7 +42,7 @@ def remove_student():
     else:
         print(f"{name} is not a student.")
 
-def get_pass_students():
+def get_passing_students():
     """
     Calls average_list to calculate average for every student and returns a list of tuples name, average.
     """
@@ -54,7 +54,16 @@ def get_pass_students():
     return pass_students
 
 def show_average_student():
-    pass
+    while True:
+        name = input("Which student do you want to search for?: ")
+
+        if name in students:
+            print("Name | Average")
+            print(f"{name} | {average_list(students[name])}")
+            break
+        else:
+            print(f"{name} is not saved in database. Please try again.")
+    
 
 def get_all_students_average():
     averages = []
@@ -89,12 +98,12 @@ def main():
             remove_student()
 
         elif option == "3":
-            pass_students = get_pass_students()
+            passing_students = get_passing_students()
             print("Passing students: ")
-            if pass_students:
+            if passing_students:
                 print("   Name | Average")
                 i = 1
-                for student in pass_students:
+                for student in passing_students:
                     print(f"{i} - {student[0]} | {student[1]:.2f}")
                     i += 1
             else:

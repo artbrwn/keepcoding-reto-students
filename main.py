@@ -21,7 +21,6 @@ students = {}
 def add_student():
     """
     Adds a key in the student dictionary by name and 3 marks.
-    TODO: Avoid adding students with the same name.
     """
     while True:
         name = input("Please insert students name: ")
@@ -54,6 +53,9 @@ def get_passing_students():
     return pass_students
 
 def show_average_student():
+    """
+    Searches for a name, calculates their average and shows it.
+    """
     while True:
         name = input("Which student do you want to search for?: ")
 
@@ -66,6 +68,9 @@ def show_average_student():
     
 
 def get_all_students_average():
+    """
+    Iterates over students dict. and calls average_list for its marks.    
+    """
     averages = []
     for student, marks in students.items():
         averages.append((student, average_list(marks)))

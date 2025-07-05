@@ -59,7 +59,7 @@ def show_average_student():
 
         if name in students:
             print("Name | Average")
-            print(f"{name} | {average_list(students[name])}")
+            print(f"{name} | {average_list(students[name]):.2f}")
             break
         else:
             print(f"{name} is not saved in database. Please try again.")
